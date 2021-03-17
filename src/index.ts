@@ -1,5 +1,6 @@
 import express from 'express';
 import cors from 'cors';
+import { PET_DATA } from './data';
 
 const app = express();
 
@@ -9,8 +10,8 @@ app.use(cors());
 
 const router = express.Router();
 
-router.get('/', (req, res) => {
-  res.send('buenardo');
+router.get('/pets', (req, res) => {
+  res.send(PET_DATA);
 });
 
 app.use('/', router);
