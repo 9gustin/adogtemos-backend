@@ -1,4 +1,5 @@
 import mongoose from 'mongoose';
+import Image from "../../common/models/image";
 
 const BreedSchema = new mongoose.Schema(
   {
@@ -40,16 +41,6 @@ const LocationSchema = new mongoose.Schema(
   }
 );
 
-const ImageSchema = new mongoose.Schema(
-  {
-    url: {
-      type: String,
-      required: true
-    },
-    isMain: Boolean
-  }
-);
-
 const PetSchema = new mongoose.Schema(
   {
     name: {
@@ -73,7 +64,7 @@ const PetSchema = new mongoose.Schema(
       required: true
     },
     images: {
-      type: [ImageSchema],
+      type: [Image],
       required: true,
     },
     gender: {

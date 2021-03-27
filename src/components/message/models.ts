@@ -1,4 +1,5 @@
 import mongoose from 'mongoose';
+import Image from "../../common/models/image";
 
 const UserSchema = new mongoose.Schema(
   {
@@ -6,7 +7,7 @@ const UserSchema = new mongoose.Schema(
       type: String,
       required: true
     },
-    photo: String,
+    image: Image,
   }
 );
 
@@ -24,7 +25,7 @@ const MessageSchema = new mongoose.Schema(
         type: String,
         required: true
     },
-    image: String,
+    image: Image,
     creation_date: {
         type: Date,
         required: true
